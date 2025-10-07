@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Freelancer Invoice & GST Lookup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Freelancer Invoice MVP</h1>
+
+  <section id="invoice">
+    <h2>Invoice Generator</h2>
+    <input type="text" id="client" placeholder="Client Name" />
+    <input type="text" id="service" placeholder="Service Description" />
+    <input type="number" id="amount" placeholder="Amount" />
+    <select id="gst">
+      <option value="0">0%</option>
+      <option value="5">5%</option>
+      <option value="12">12%</option>
+      <option value="18">18%</option>
+    </select>
+    <button onclick="generateInvoice()">Generate</button>
+    <div id="invoice-output"></div>
+  </section>
+
+  <section id="gst-lookup">
+    <h2>GST Rate Lookup</h2>
+    <input type="text" id="item" placeholder="Enter item name" />
+    <button onclick="lookupGST()">Lookup</button>
+    <div id="gst-output"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
