@@ -1,38 +1,18 @@
-function generateInvoice() {
-  const client = document.getElementById("client").value;
-  const service = document.getElementById("service").value;
-  const amount = parseFloat(document.getElementById("amount").value);
-  const gstRate = parseFloat(document.getElementById("gst").value);
-  const gstAmount = (amount * gstRate) / 100;
-  const total = amount + gstAmount;
+document.getElementById("invoiceForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  document.getElementById("invoice-output").innerHTML = `
-    <p><strong>Client:</strong> ${client}</p>
-    <p><strong>Service:</strong> ${service}</p>
+  const clientName = document.getElementById("clientName").value;
+  const project = document.getElementById("project").value;
+  const amount = document.getElementById("amount").value;
+  const dueDate = document.getElementById("dueDate").value;
+
+  const invoiceHTML = `
+    <h2>Invoice</h2>
+    <p><strong>Client:</strong> ${clientName}</p>
+    <p><strong>Project:</strong> ${project}</p>
     <p><strong>Amount:</strong> ₹${amount}</p>
-    <p><strong>GST (${gstRate}%):</strong> ₹${gstAmount}</p>
-    <p><strong>Total:</strong> ₹${total}</p>
+    <p><strong>Due Date:</strong> ${dueDate}</p>
   `;
-}
 
-const gstRates = {
-  "milk": 0,
-  "mobile": 18,
-  "books": 0,
-  "software": 18,
-  "clothing": 5,
-};
-
-function lookupGST() {
-  const item = document.getElementById("item").value.toLowerCase();
-  const rate = gstRates[item];
-
-  if (rate !== undefined) {
-    document.getElementById("gst-output").innerHTML = `
-      <p><strong>GST Rate for ${item}:</strong> ${rate}%</p>
-      <p>Input tax credit may apply based on business type.</p>
-    `;
-  } else {
-    document.getElementById("gst-output").innerHTML = `<p>Item not found. Try another.</p>`;
-  }
-}
+  document.getElementById("invoiceOutput").innerHTML = invoiceHTML;
+});
