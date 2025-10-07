@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Freelancer Invoice & GST Lookup</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelancer Invoice</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Freelancer Invoice MVP</h1>
+  <div class="container">
+    <h1>Freelancer Invoice</h1>
+    <form id="invoiceForm">
+      <label for="clientName">Client Name:</label>
+      <input type="text" id="clientName" name="clientName" required />
 
-  <section id="invoice">
-    <h2>Invoice Generator</h2>
-    <input type="text" id="client" placeholder="Client Name" />
-    <input type="text" id="service" placeholder="Service Description" />
-    <input type="number" id="amount" placeholder="Amount" />
-    <select id="gst">
-      <option value="0">0%</option>
-      <option value="5">5%</option>
-      <option value="12">12%</option>
-      <option value="18">18%</option>
-    </select>
-    <button onclick="generateInvoice()">Generate</button>
-    <div id="invoice-output"></div>
-  </section>
+      <label for="project">Project Description:</label>
+      <input type="text" id="project" name="project" required />
 
-  <section id="gst-lookup">
-    <h2>GST Rate Lookup</h2>
-    <input type="text" id="item" placeholder="Enter item name" />
-    <button onclick="lookupGST()">Lookup</button>
-    <div id="gst-output"></div>
-  </section>
+      <label for="amount">Amount (₹):</label>
+      <input type="number" id="amount" name="amount" required />
+
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" name="dueDate" required />
+
+      <button type="submit">Generate Invoice</button>
+    </form>
+
+    <div id="invoiceOutput" class="invoice"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
+
