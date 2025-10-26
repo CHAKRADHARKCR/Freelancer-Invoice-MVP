@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Freelancer Invoice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Freelancer Invoice</h1>
+    <form id="invoiceForm">
+      <label for="clientName">Client Name:</label>
+      <input type="text" id="clientName" name="clientName" required />
+
+      <label for="project">Project Description:</label>
+      <input type="text" id="project" name="project" required />
+
+      <label for="amount">Amount (₹):</label>
+      <input type="number" id="amount" name="amount" required />
+
+      <label for="dueDate">Due Date:</label>
+      <input type="date" id="dueDate" name="dueDate" required />
+
+      <button type="submit">Generate Invoice</button>
+    </form>
+
+    <div id="invoiceOutput" class="invoice"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
